@@ -1,0 +1,14 @@
+defaultNamespace: kured
+helm:
+  chart: .
+  valuesFiles:
+    - values.yaml
+targetCustomizations:
+- name: labb
+  helm:
+    valuesFiles:
+    - values-labb.yaml
+  clusterSelector:
+    matchLabels:
+      mycompany.fleet.rancher.cluster.name: labb
+

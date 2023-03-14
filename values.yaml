@@ -1,0 +1,25 @@
+kured:
+  configuration:
+    period: 10m
+    rebootDays:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+    timeZone: Europe/Stockholm
+    startTime: 8:00
+    endTime: 15:59:59
+    lockReleaseDelay: 10m
+  tolerations:
+  - key: node-role.kubernetes.io/controlplane
+    effect: NoSchedule
+    value: "true"
+  - key: node-role.kubernetes.io/etcd
+    effect: NoExecute
+    value: "true"
+  - key: storage
+    effect: NoSchedule
+    value: "true"
+  metrics:
+    create: true

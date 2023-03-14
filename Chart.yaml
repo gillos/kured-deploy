@@ -1,0 +1,6 @@
+name: kured
+version: 0.1
+dependencies:
+  - name: kured
+    version: "4.0.2"
+    repository: https://kubereboot.github.io/charts
